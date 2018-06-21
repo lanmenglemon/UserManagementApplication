@@ -1,0 +1,63 @@
+<h1>Message Details Page</h1>
+<table border="1" style="border-collapse:collapse">
+    <tr>
+        <th>
+            Recipient
+        </th>
+        <td>
+            <img src="{{message.recipient_img}}" style="width: 50px;" />
+            {{message.recipient}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Sender
+        </th>
+        <td>
+            <img src="{{message.sender_img}}" style="width: 50px;" />
+            {{message.sender}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Title
+        </th>
+        <td>
+            {{message.title}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Description
+        </th>
+        <td>
+            {{message.description}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Created at
+        </th>
+        <td>
+            {{message.created_at}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Replies
+        </th>
+        <td>
+            <p ng-repeat="reply in message.replies">{{reply}}</p>
+        </td>
+    </tr>
+</table>
+
+<button ng-click="reply(ngShowhide)">Reply</button>
+<button ng-click="deletemessage()">Delete</button>
+<button ng-click="mark()" id="imp">Important</button>
+<button ng-click="backtomessages()">Back to messages</button><br /><br />
+
+<div ng-show="ngShowhide">
+    <input type="text" placeholder="Reply" ng-model="replyTxt"/>
+    <button ng-click="submitReply()">Submit</button>
+</div>

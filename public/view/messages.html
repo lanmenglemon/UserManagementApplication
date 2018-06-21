@@ -1,0 +1,5 @@
+<h1>Messages List</h1>
+
+<div ng-repeat="message in messages track by $index">
+    <a href="#/messages/{{$index}}">{{message.title}}</a><br /><br />
+</div>
